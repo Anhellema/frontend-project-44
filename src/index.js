@@ -1,7 +1,9 @@
 import readlineSync from 'readline-sync';
 import participantName from '../bin/games/brain-games.js';
-пше
+
 const randomNumber = () => { return Math.floor(Math.random() * 20) };
+
+const randomNumberGCD = () => { return Math.floor(Math.random() * 100) };
 
 const randomOperator = () => {
   let randomizer = Math.ceil(Math.random() * 3)
@@ -30,4 +32,4 @@ const answerCheck = (answerToCheck, valueToCheck) => {
   };
 };
 
-export { randomNumber, randomOperator, answerCheck, getAnswer,  };
+export { randomNumber, randomOperator, answerCheck, getAnswer, randomNumberGCD };
