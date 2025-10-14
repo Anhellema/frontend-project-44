@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { name } from './brain-games.js'
 import { getAnswer } from '../src/cli.js'
 
