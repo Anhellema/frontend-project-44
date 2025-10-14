@@ -20,7 +20,7 @@ const isEvenGame = () => {
     }
     else {
       return console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnswer}.
-        Let's try again, ${name}`)
+        Let's try again, ${name}!`)
     }
   }
   return console.log(`Congratulations, ${name}!`)
