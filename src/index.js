@@ -95,27 +95,27 @@ const isPrime = (number) => {
 const gameType = {
   brainEven: {
     rules: 'Answer "yes" if the number is even, otherwise answer "no".',
-    question: [getRandomNumber()],
+    question: () => [getRandomNumber()],
     correct: (q) => q % 2 === 0 ? 'yes' : 'no',
   },
   brainCalc: {
     rules: 'What is the result of the expression?',
-    question: [getRandomNumber(25, 15), operatorRandomizer(), getRandomNumber(25, 15)],
+    question: () => [getRandomNumber(25, 15), operatorRandomizer(), getRandomNumber(25, 15)],
     correct: (arr) => calculate(arr[0], arr[2], arr[1]),
   },
   brainGCD: {
     rules: 'Find the greatest common divisor of given numbers.',
-    question: [getRandomNumber(0, 60), getRandomNumber(0, 36)],
+    question: () => [getRandomNumber(0, 60), getRandomNumber(0, 36)],
     correct: (arr) => isGCD(arr[0], arr[1]),
   },
   brainProgression: {
     rules: 'What number is missing in the progression?',
-    question: getProgressionQuestion(getRandomProgression()),
+    question:    getProgressionQuestion(getRandomProgression()),
     correct: () => correctAnswer, // получаем измененную переменную из глобального окружения
   },
   brainPrime: {
     rules: 'Answer "yes" if the number is even, otherwise answer "no".',
-    question: [getRandomNumber()],
+    question: () => [getRandomNumber()],
     correct: (q) => isPrime(q),
   },
 }
@@ -126,7 +126,8 @@ const brainGame = (game) => {
   // цикл должен быть модульным с переменными для каждого ключа
 
   for (let i = 0; i < 3; i++) {
-    const readQuestion = question.join(' ') // создаем константу где массив превращается в строку для вопроса
+    const loopQuestion = question
+    const readQuestion = loopQuestion.join(' ') // создаем константу где массив превращается в строку для вопроса
 
     // другой вопрос и ответ
     console.log(rules)
@@ -134,7 +135,7 @@ const brainGame = (game) => {
     // это одно и то же
     const answer = getAnswer()
     //  разный правильный ответ
-    const correctAnswer = correct(question)
+    const correctAnswer = correct(loopQuestion)
     // тело цикла и ретурн одинаковые
     if (correctAnswer == answer) {
       console.log('Correct!')
