@@ -110,7 +110,7 @@ const gameType = {
   },
   brainProgression: {
     rules: 'What number is missing in the progression?',
-    question:    getProgressionQuestion(getRandomProgression()),
+    question: () => getProgressionQuestion(getRandomProgression()),
     correct: () => correctAnswer, // получаем измененную переменную из глобального окружения
   },
   brainPrime: {
@@ -126,7 +126,7 @@ const brainGame = (game) => {
   // цикл должен быть модульным с переменными для каждого ключа
 
   for (let i = 0; i < 3; i++) {
-    const loopQuestion = question
+    const loopQuestion = question()
     const readQuestion = loopQuestion.join(' ') // создаем константу где массив превращается в строку для вопроса
 
     // другой вопрос и ответ
