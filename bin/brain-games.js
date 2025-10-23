@@ -2,7 +2,7 @@
 import { getName } from '../src/cli.js'
 
 console.log('Welcome to the Brain Games!')
-const name = getName()
-console.log(`Hello, ${name}!`)
+const playerName = getName()
+console.log(`Hello, ${playerName}!`)
 
-export { name }
+export { playerName }
