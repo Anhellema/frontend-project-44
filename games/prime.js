@@ -1,6 +1,4 @@
 const isPrime = (number) => {
-  let result
-
   if (number < 2 || number % 2 === 0) {
     return 'no'
   }
@@ -9,13 +7,13 @@ const isPrime = (number) => {
     return 'yes'
   }
 
-  let squareNumber = Math.sqrt(number)
-
-  for (let i = 0; i <= Math.floor(squareNumber); i++) {
-    number % i === 0 ? result = 'no' : result = 'yes'
+  let sqrtNumber = Math.floor(Math.sqrt(number))
+  for (let i = 3; i <= sqrtNumber; i += 2) {
+    if (number % i === 0) {
+      return 'no'
+    }
   }
-
-  return result
+  return 'yes'
 }
 
 export { isPrime }
