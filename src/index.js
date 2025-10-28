@@ -32,7 +32,7 @@ const gameType = {
     getCorrectAnswerValue: () => correctAnswerVariable, // получаем измененную переменную из глобального окружения
   },
   brainPrime: {
-    gameRules: 'Answer "yes" if the number is even, otherwise answer "no".',
+    gameRules: 'Answer "yes" if given number is prime. Otherwise answer "no".',
     getGameQuestion: () => [getRandomNumber()],
     getCorrectAnswerValue: (q) => isPrime(q),
   },
