@@ -14,17 +14,17 @@ const gameType = {
   brainEven: {
     gameRules: 'Answer "yes" if the number is even, otherwise answer "no".',
     getGameQuestion: () => [getRandomNumber()],
-    getCorrectAnswerValue: (q) => isEven(q),
+    getCorrectAnswerValue: q => isEven(q),
   },
   brainCalc: {
     gameRules: 'What is the result of the expression?',
     getGameQuestion: () => [getRandomNumber(3, 25), operatorRandomizer(), getRandomNumber(3, 15)],
-    getCorrectAnswerValue: (arr) => calculateFunction(arr[0], arr[2], arr[1]),
+    getCorrectAnswerValue: arr => calculateFunction(arr[0], arr[2], arr[1]),
   },
   brainGCD: {
     gameRules: 'Find the greatest common divisor of given numbers.',
     getGameQuestion: () => [getRandomNumber(0, 60), getRandomNumber(0, 36)],
-    getCorrectAnswerValue: (arr) => isGCD(arr[0], arr[1]),
+    getCorrectAnswerValue: arr => isGCD(arr[0], arr[1]),
   },
   brainProgression: {
     gameRules: 'What number is missing in the progression?',
@@ -34,7 +34,7 @@ const gameType = {
   brainPrime: {
     gameRules: 'Answer "yes" if given number is prime. Otherwise answer "no".',
     getGameQuestion: () => [getRandomNumber()],
-    getCorrectAnswerValue: (q) => isPrime(q),
+    getCorrectAnswerValue: q => isPrime(q),
   },
 }
 
