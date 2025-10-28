@@ -14,7 +14,7 @@ const gameType = {
   brainEven: {
     gameRules: 'Answer "yes" if the number is even, otherwise answer "no".',
     getGameQuestion: () => [getRandomNumber()],
-    getCorrectAnswerValue: (q) => isEven(q)
+    getCorrectAnswerValue: (q) => isEven(q),
   },
   brainCalc: {
     gameRules: 'What is the result of the expression?',
