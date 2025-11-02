@@ -1,10 +1,10 @@
 const isPrime = (number) => {
-  if (number < 2 || number % 2 === 0) {
-    return 'no'
+  if (number === 2) {
+    return 'yes'
   }
 
-  else if (number === 2) {
-    return 'yes'
+  else if (number < 2 || number % 2 === 0) {
+    return 'no'
   }
 
   let sqrtNumber = Math.floor(Math.sqrt(number))
